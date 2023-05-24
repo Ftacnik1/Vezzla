@@ -3,7 +3,7 @@ import Mesta
 import Nacitani
 import Planek
 import PraceSHracem
-poctah=0
+tah=0
 odpocet=0
 dobodpoc=0
 predpoved=0
@@ -70,15 +70,15 @@ def TahDaZ(tah):
     global planek
     global predpoved
     citah=1
-    for i in range(3):
+    for i in range(1):
         penize=Mesta.pen(planek)
-        nahodnecislo=random.randint(1,3)
-        if nahodnecislo==1:
+        nahodnecislo=random.randint(1,6)
+        if nahodnecislo<4:
             planek=Mesta.tvorbamest(citah,penize,planek)
-        elif nahodnecislo==2:
-            Mesta.utok(planek,citah)
-        elif nahodnecislo==3:
-            Mesta.kolonizace(planek)
+        elif nahodnecislo>3 and nahodnecislo<6:
+            planek=Mesta.utok(planek,citah)
+        elif nahodnecislo==6:
+            planek=Mesta.kolonizace(planek)
     if tah==20:
         predpoved=1
         print("Zlo se prichystalo a chce vest valku s kralovstvim.")
@@ -131,12 +131,11 @@ def tahhrac():
     print("Chces si neco otevrit?")
     print("M(mapu)")
     mozotevrit = ["M"]
+    mozotevritstr="M"
     if predpoved==1:
         mozotevrit.append("P")
         print("P(predikci)")
-    mozotevritstr=""
-    for i in mozotevrit:
-        mozotevritstr+=i
+        mozotevritstr="M,P"
     odpoved=(input(f"Otevrit({mozotevritstr}): ")).upper()
     if odpoved in mozotevrit:
         if odpoved=="M":
@@ -173,6 +172,7 @@ def tahhrac():
 
 """Spousti TahDaZ a tahhrac"""
 def hra():
+    global tah
     tah=0
     konechry=0
     while konechry==0:
@@ -181,12 +181,8 @@ def hra():
         konechry=tahhrac()
         tah+=1
 hra()
-"""Hra skoncila vypisuje kontolni udaje"""  
-print(poctah)
-print("Kontrola penez")
-penize=Mesta.pen(planek)
-print(penize)
-print("Kontrola penez")
+print("Hra skoncila-jsi mrtev")
+print(f"Pocet tahu: {tah}")
 with open ("Kontrola.txt","w") as f1:
     f1.write(str(planek))
             

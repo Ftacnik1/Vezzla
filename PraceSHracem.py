@@ -72,7 +72,7 @@ def setkspris():
     print("Co chces udelat? Zabit priseru, utect, nechat se sezrat: ")
     akce = (input("Z,U,NSS: ")).upper()
     while akce not in ["Z","U","NSS"]:
-        akce = (input("Spatna akce, vyber z techto tri: Z,U,NSS")).upper()
+        akce = (input("Spatna akce, vyber z techto tri Z,U,NSS: ")).upper()
     if akce == "NSS":
         print("Nechal ses sezrat... hra pro tebe konci.")
         return(-5)
@@ -82,7 +82,7 @@ def setkspris():
             print(f"Slysis za sebou utikat priseru.")
             akce = (input("Z,NSS: ")).upper()
             while akce not in ["Z","NSS"]:
-                akce = input("Spatna akce, vyber z techto dvou: Z,NSS")
+                akce = input("Spatna akce, vyber z techto dvou Z,NSS: ")
             if akce == "NSS":
                 print("Nechal ses sezrat... hra pro tebe konci.")
                 return(-5)

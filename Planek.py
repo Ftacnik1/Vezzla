@@ -90,5 +90,5 @@ def zpravy(kam,odpocet,jmenogenerala,dobodpoc,silautoku):
         misto="Hlavniho mesta"
     else:
         misto="Univerzitniho mesta"
-    lines=(f"Napadeni {misto} probehne za {odpocet} tahu. Utok povede {jmenogenerala}.\nMa silu {silautoku}. Mesto padne za {dobodpoc} tahu od napadeni" )
+    lines=(f"Napadeni {misto} probehne za {odpocet} tahu. Utok povede {jmenogenerala}.\nMa silu {silautoku}." )
     return(lines)

@@ -110,7 +110,6 @@ def pen(planek):
 def tvorbamest(citah,penize,planek):
     c=0
     a=0
-    print("tm")
     while c==0:
         if penize>0:
             prozprom=random.randint(0,899)
@@ -148,7 +147,7 @@ def utok(planek,citah):
 def kolonizace(planek):
     PoleMest=mestanazvy()
     for i in range(900):
-        if planek[i][0]==1 and planek[i][1]==1:
+        if planek[i][4]==0:
             potnaz=random.randint(1,len(PoleMest)-1)
             planek[i][5]=potnaz
             planek[i][1]=2
