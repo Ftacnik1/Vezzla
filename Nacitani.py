@@ -138,3 +138,10 @@ def oblecenisila():
         else:
             clenylistu += i
     return(obleceniSilaList)
+def navod():
+    try:
+        with open ("navod.txt","r") as f:
+            text= f.read()
+    except FileNotFoundError:
+        print("Soubor navod nenalezen")
+    return(text)

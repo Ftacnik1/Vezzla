@@ -148,10 +148,12 @@ def kolonizace(planek):
     PoleMest=mestanazvy()
     for i in range(900):
         if planek[i][4]==0:
-            potnaz=random.randint(1,len(PoleMest)-1)
-            planek[i][5]=potnaz
-            planek[i][1]=2
-            planek[i][2]=1
+            nahodnecislo=random.randint(1,5)
+            if nahodnecislo==1:
+                potnaz=random.randint(1,len(PoleMest)-1)
+                planek[i][5]=potnaz
+                planek[i][1]=2
+                planek[i][2]=1
     return(planek)
 
 

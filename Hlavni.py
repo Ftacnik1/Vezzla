@@ -19,37 +19,63 @@ GeneralCislo=0
 Ziv=0
 Penize=0
 jmenogenerala=str()
+
 """Promenne nacitane z txt"""
+
+"""navod"""
+
+navod=Nacitani.navod()
+
 """Prisery"""
+
 polePriser = Nacitani.prisera()
 PoleSilPriser=Nacitani.silapris()
 IndexyPriseryDelka=len(polePriser)-1
+
 """Prisery(generalove)"""
+
 poleGeneralu=Nacitani.gengen()
 silaGeneralu=Nacitani.silagen()
+
 """Mesta"""
+
 PoleMest=Mesta.mestanazvy()
+
 """Veci"""
+
 PoleVeci=Nacitani.veci()
 PoleSilVeci=Nacitani.vecisila()
-IndexTveVeci=random.randint(0,(len(PoleVeci)-1))
+IndexTveVeci=9
+
+"""lze nastavit i vyber nahodne zbrane
+    random.randint(0,(len(PoleVeci)-1))"""
+
 TvojeVec=PoleVeci[IndexTveVeci]
 TvojeVecSila=PoleSilVeci[IndexTveVeci]
+
 """Obleceni"""
+
 poleObleceni=Nacitani.obleceni()
 poleSilObleceni=Nacitani.oblecenisila()
 IndexTvehoObleceni=random.randint(0,(len(poleObleceni)-1))
 Ziv=1+int(poleSilObleceni[IndexTvehoObleceni])
 print(f"Mas {poleObleceni[IndexTvehoObleceni]}")
+
 """Tvorba zakladniho planku"""
+
 planek=Planek.start(PoleSilPriser,IndexyPriseryDelka)
+
 """Tvorba 20 mest na zacatek"""
+
 planek=Mesta.mestazaklad(planek,PoleMest)
+
 """Tvorba hlavnich mest"""
+
 planek=Mesta.klicovamesta(planek,poleGeneralu,silaGeneralu)
 """Zaklad prichystan-dale kod hry"""
-
-
+akce = (input("Chces si otevrit navod- pokud ano napis N: ")).upper()
+if akce in ["N"]:
+    print(navod)
 
 
 
@@ -72,12 +98,12 @@ def TahDaZ(tah):
     citah=1
     for i in range(1):
         penize=Mesta.pen(planek)
-        nahodnecislo=random.randint(1,6)
-        if nahodnecislo<4:
+        nahodnecislo=random.randint(1,3)
+        if nahodnecislo==1:
             planek=Mesta.tvorbamest(citah,penize,planek)
-        elif nahodnecislo>3 and nahodnecislo<6:
+        elif nahodnecislo==2:
             planek=Mesta.utok(planek,citah)
-        elif nahodnecislo==6:
+        elif nahodnecislo==3:
             planek=Mesta.kolonizace(planek)
     if tah==20:
         predpoved=1
@@ -180,9 +206,18 @@ def hra():
         Planek.MapaViz(planek,Pozice)
         konechry=tahhrac()
         tah+=1
+
+
+
 hra()
 print("Hra skoncila-jsi mrtev")
 print(f"Pocet tahu: {tah}")
+
+
+"""V pripade ze hra se poroucha soubor kontrola muze pomoci najit chybu-
+        obsahuje vsechny informace z planku a s pomoci informaci z konzole lze zjistit
+        problemovou situaci"""
+
 with open ("Kontrola.txt","w") as f1:
     f1.write(str(planek))
             

@@ -1,0 +1,77 @@
+Vitej dobrodruhu. Budes chodit na mape a bojovat s priserami. Na zacatku hry dostanes nahodne obleceni a nahodnou zbran. Na kazdem poli kde neni mesto je prisera.
+Po mape se pohybujes napsanim velkych pismen (S,J,V,Z) Kdyz v lese zabijes priseru uz se tam neobjevi. Na zacatku tahu  mas  moznost zobrazit si mapu napsanim pismene M.
+
+Priklad:
+(
+0 0 0 0 0 0 0 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 8 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 0 0 0 0 4 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0
+0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 3 0 0 0 0 0 0 3 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 3 0 0 0 0 0 0 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+3 0 0 3 0 0 3 0 0 0 0 0 0 0 0 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 P 0 0 0 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+-cisla ukazuji uroven mesta za kazdou uroven je v obchode vice veci
+-P je vase pozice
+-5 je univerzitni mesto
+-6 je hlavni mesto
+-7 je zle mesto
+-8 je hlavni zle mesto
+Neni vlastne rozdil mezi 7 a 8.)
+
+
+Krome hrace se meni i planek. Nahodne se z neobydlenych lesu stanou mesta a ta se postupne vylepsuji. Ve mestech je moznost si  neco koupit.
+
+Priklad:
+
+(Jsi v  Martiyonne a mas mec										-jmeno mesta
+Mas moznost si koupit zbran, jestli chces odejit napis cokoli a zmackni cokoli mimo cisla nize		
+Nabidka
+['nuz', 'sit']												-jmena zbrani
+Cislo zbrane
+[0, 1]													-cislo pod kterym je zbran v obchode
+Cena
+[6, 9]													-kolik penez zbran stoj cena vychazi ze sily zbrane
+[0, 1]													-sem se zadavvaji cisla zbrane kterou chcete)
+
+
+
+Prisery maji ruzne sily. Nejlepsi jsou generalove, kteri jsou ve zlych mestech a dobyvaji hodna mesta. Sila prisery vychazi z typu prisery.
+Kdyz se  potkas s  priserou soucet sily tve zbrane a tveho hodu souperi s hodem prisery a  jeji silou.
+
+Priklad:
+
+(Jsi v lese a mas luk
+Vidis utocnou sepii
+Co chces udelat? Zabit priseru, utect, nechat se sezrat:
+Z,U,NSS: z
+Hodil jsi 1
+Prisera hodila 6
+Prisera te zranila)
+
+Zlo muze napadat mesto cislo 5 a 6. Od doby kdy zlo zacne napadat budete mit predikci kdy napadne mesto.
+Na zacatku tahu si budete moci vybrat mezi mapou a predikci. Zlo za nejakou dobu mesto dobije.
+Pak uz nebude moznost dobit ho zpetPo dobyti jednoho ho mesta ho muze zo znovu napadanout.
+Pokud ho znovu napadne tak se dlouho nebude nic dit.
+
+Hra  konci smrti. Bud se hrac necha sezrat, nebo bude mit 0 zivotu.
+
