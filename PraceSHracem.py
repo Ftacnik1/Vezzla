@@ -1,5 +1,8 @@
 import random
 kostka = [1,2,3,4,5,6]
+
+
+"""Funkce pro souboj s priserou (Pocet penez za jeji smrt je odvozen od jeji sily)"""
 def boj(Pozice,Ziv,Penize,TvojeVecSila,planek):
     tvujhod=int(random.choice(kostka))
     priseryhod=int(random.choice(kostka))
@@ -16,6 +19,8 @@ def boj(Pozice,Ziv,Penize,TvojeVecSila,planek):
         print("Prisera te zranila")
         Ziv-=1
         return(Penize,Ziv)
+    
+"""Zjistuje kam chce hrac jit"""
 def Pohyb(Pozice):
     print(Pozice)
     tx=Pozice % 30
@@ -33,6 +38,9 @@ def Pohyb(Pozice):
     if akce=="J":
         Pozice+=30
     return(Pozice)
+
+
+"""Co se deje kdyz hrac dorazi na jakekoli misto"""
 def DorazilNaMisto(PoleMest,Pozice,planek,polePriser,TvojeVec,poleGeneralu):
     misto=PoleMest[planek[Pozice][5]]
     if planek[Pozice][1]==5 or planek[Pozice][1]==-5:
@@ -57,6 +65,10 @@ def DorazilNaMisto(PoleMest,Pozice,planek,polePriser,TvojeVec,poleGeneralu):
             return(1)
     else:
         return(0)
+    
+
+
+"""Vraci kam muze hrac jit(souradnice z tx a ty)"""
 def kampohhrac(tx,ty):
     kammoznosti =[]
     if ty>0:
@@ -68,6 +80,10 @@ def kampohhrac(tx,ty):
     if tx<29:
         kammoznosti.append("V")
     return(kammoznosti)
+
+
+
+"""Neni primo boj hrac se setka s priserou a rozhoduje se"""
 def setkspris():
     print("Co chces udelat? Zabit priseru, utect, nechat se sezrat: ")
     akce = (input("Z,U,NSS: ")).upper()
@@ -91,6 +107,10 @@ def setkspris():
         else: return(2)
     else:
         return(1)
+    
+
+
+"""Hrac nakupuje ve meste"""
 def mesto(Pozice,planek,Penize,TvojeVec,PoleVeci,PoleSilVeci,TvojeVecSila,PoleObleceni,PoleSilObleceni,Ziv):
     if planek[Pozice][1]>1 and planek[Pozice][1]<7:
         obchod=[]

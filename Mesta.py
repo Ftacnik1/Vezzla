@@ -41,7 +41,7 @@ def mestazaklad(planek,PoleMest):
 
 """Vytvori ctyri vyznamna mesta. dve hodna a dve zla potlokme(lokace mesta)"""
 """planek[potlokme][0] typ mesta hodne(2) zle (3)
-    planek[potlokme][1] kazde klicove mesto ma jedno specicifke cislo hodna(5,6) zla(6,7)
+    planek[potlokme][1] kazde klicove mesto ma jedno specicifke cislo hodna(5,6) zla(7,8
     planek[potlokme][2] kolik penez ma mesto zaplatit u klicovych mest neni potreba
     planek[potlokme][3] jmeno generala(zleho)
     planek[potlokme][4] sila generala(zleho)"""
