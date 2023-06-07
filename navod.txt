@@ -56,7 +56,7 @@ Cena
 
 
 Prisery maji ruzne sily. Nejlepsi jsou generalove, kteri jsou ve zlych mestech a dobyvaji hodna mesta. Sila prisery vychazi z typu prisery.
-Kdyz se  potkas s  priserou soucet sily tve zbrane a tveho hodu souperi s hodem prisery a  jeji silou.
+Kdyz se  potkas s  priserou, soucet sily tve zbrane a tveho hodu souperi s hodem prisery a  jeji silou.
 
 Priklad:
 
@@ -69,8 +69,8 @@ Prisera hodila 6
 Prisera te zranila)
 
 Zlo muze napadat mesto cislo 5 a 6. Od doby kdy zlo zacne napadat budete mit predikci kdy napadne mesto.
-Na zacatku tahu si budete moci vybrat mezi mapou a predikci. Zlo za nejakou dobu mesto dobije.
-Pak uz nebude moznost dobit ho zpetPo dobyti jednoho ho mesta ho muze zo znovu napadanout.
+Na zacatku tahu si budete moci vybrat mezi mapou a predikci. Zlo za nejakou dobu mesto dobyde.
+Pak uz nebude moznost dobyt ho zpet. Po dobyti jednoho ho mesta ho muze zlo znovu napadanout.
 Pokud ho znovu napadne tak se dlouho nebude nic dit.
 
 Hra  konci smrti. Bud se hrac necha sezrat, nebo bude mit 0 zivotu.

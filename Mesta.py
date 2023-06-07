@@ -147,7 +147,8 @@ def utok(planek,citah):
 def kolonizace(planek):
     PoleMest=mestanazvy()
     for i in range(900):
-        if planek[i][4]==0:
+        if planek[i][4]==0 and planek[i][5]==0:
+            
             nahodnecislo=random.randint(1,5)
             if nahodnecislo==1:
                 potnaz=random.randint(1,len(PoleMest)-1)
